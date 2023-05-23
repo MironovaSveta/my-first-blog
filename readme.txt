@@ -96,5 +96,51 @@ Result: Django settings panel appears
 
 18) create .gitignore
 
-19) add useful files:
-git status, git add
+19) add useful files, create commit:
+git status, git add, git commit
+
+20) create repository on GitHub, add origin
+(myvenv) $ git remote add origin git@github.com:MironovaSveta/my-first-blog.git
+
+21) push changes
+(myvenv) $ git push --set-upstream origin main
+
+#########################################################################################
+
+22) register at www.pythonanywhere.com
+
+23) create API token for PythonAnywhere
+
+24) run Bash console at PythonAnywhere:
+pip3.6 install --user pythonanywhere
+pa_autoconfigure_django.py https://github.com/...
+python manage.py createsuperuser
+
+  -----------------------------------
+/                                     \
+| All done!  Your site is now live at |
+| https://blacksky.pythonanywhere.com |
+\                                     /
+  -----------------------------------
+
+#########################################################################################
+URLconf
+
+In mysite/urls.py:
+urlpatterns = [
+    path('admin/', admin.site.urls),
+]
+= for each URL starting with admin/ Django will find corresponding view (= представление)
+
+VIEW requests info from model and conveys info into template
+Views are like methods in Python
+
+25) add line for importing blog.urls (in file mysite/urls.py)
+
+26) create blog.urls and add URL-template
+    * file blog/urls.py
+
+27) add view to blog/views.py
+
+28) create template, in HTML = Hyper Text Markup Language
+    blog/templates/blog/post_list.html
