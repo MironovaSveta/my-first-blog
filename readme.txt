@@ -90,6 +90,7 @@ Result: Django settings panel appears
 16) go to Posts folder of the Django settings panel appears and add some posts
 
 #########################################################################################
+Git repo
 
 17) initialise empty repo
 (myvenv) $ git init
@@ -106,6 +107,7 @@ git status, git add, git commit
 (myvenv) $ git push --set-upstream origin main
 
 #########################################################################################
+Deploy
 
 22) register at www.pythonanywhere.com
 
@@ -144,3 +146,63 @@ Views are like methods in Python
 
 28) create template, in HTML = Hyper Text Markup Language
     blog/templates/blog/post_list.html
+
+########################################################################################
+Deploy-pull
+
+29) commit changes
+
+30) go to PythonAnywhere
+cd ~/<your-pythonanywhere-domain>.pythonanywhere.com
+git pull
+
+########################################################################################
+QuerySet
+
+Is a list of objects of a model
+
+31) open Django terminal
+(myvenv) $ python3 manage.py shell
+List all in blog:
+  * from blog.models import Post
+  * Post.objects.all()
+Create new user
+  * from django.contrib.auth.models import User
+  * User.objects.all() # lists all users
+  * user = User.objects.create_user(username='john',
+...                                  email='jlennon@beatles.com',
+...                                  password='glass onion')
+Create post object
+  * Post.objects.create(author=user, title='Sample title', text='Test')
+Filter objects
+  * Post.objects.filter(author=user)
+  * Post.objects.filter(title__contains='title')
+Publish post
+  * post = Post.objects.get(title='Sample title')
+    post.publish()
+List published posts
+  * from django.utils import timezone
+    Post.objects.filter(published_date__lte=timezone.now())
+Sort objects
+  * Post.objects.order_by('created_date')
+  * Post.objects.order_by('-created_date')
+    = descending order
+Join QuerySets
+  * Post.objects.filter(published_date__lte=timezone.now()).order_by('created_date')
+Close Django console
+  * exit()
+
+#######################################################################################
+Dynamic data
+
+32) add model to blog/views.py
+
+33) convey list of posts to a template in blog/views.py
+    blog/templates/blog/post_list.html
+    * {{posts}}
+    * more accurate: 
+      {% for post in posts %}
+        {{ post }}
+      {% endfor %}
+
+34) git-gui to push changes
