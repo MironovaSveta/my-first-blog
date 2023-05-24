@@ -206,3 +206,19 @@ Dynamic data
       {% endfor %}
 
 34) git-gui to push changes
+
+35) PythonAnywhere: git pull, Web -> Reload
+
+#######################################################################################
+CSS = Cascading Style Sheets
+
+We will use Bootstrap framework (https://getbootstrap.com/)
+
+36) install bootstrap, so add lines to blog/templates/blog/post_list.html
+
+37) add static file: blog/static/css/blog.css
+    * h1 a = CSS selector
+    * element has name (a, h1, body) and attribute class/id
+
+38) use recently created css file
+    Add line to blog/templates/blog/post_list.html
