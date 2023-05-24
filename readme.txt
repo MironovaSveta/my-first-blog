@@ -222,3 +222,20 @@ We will use Bootstrap framework (https://getbootstrap.com/)
 
 38) use recently created css file
     Add line to blog/templates/blog/post_list.html
+
+#######################################################################################
+Template extension
+
+39) create blog/templates/blog/base.html file,
+    Copy info from post_list.html to base.html
+
+40) delete {% for post in posts %} {% endfor %} block in base.html
+    Place {% block content %}
+            {% endblock %} instead
+
+41) delete all before and after {% for post in posts %} {% endfor %} block in post_list.html
+    Add {% block content %} as the first line
+    Add {% endblock %} as the last line
+
+42) link two templates (base.html and post_list.html)
+    So, add {% extends 'blog/base.html' %} as the first line of post_list.html
