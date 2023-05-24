@@ -239,3 +239,22 @@ Template extension
 
 42) link two templates (base.html and post_list.html)
     So, add {% extends 'blog/base.html' %} as the first line of post_list.html
+
+#######################################################################################
+Add page
+
+43) Add link to Post Page in template
+    File blog/templates/blog/post_list.html
+    <a href="{$ url 'post_detail' pk=post.pk %}">
+      * 'post_detail' means that Django will search URL 'post_detail' in blog.urls.py
+      * pk=post.pk means "primary key"
+
+44) create URL in blog/urls.py for view post_detail
+    Add line path('post/<int:pk>/', views.post_detail, name='post_detail'),
+
+45) add view to file blog/views.py
+    post_detail(request, pk)
+
+46) add template for Post Page
+    Create file blog/templates/blog/post_delail.html
+    
