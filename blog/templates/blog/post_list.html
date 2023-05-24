@@ -17,5 +17,12 @@
 			<h2><a href="">My second post</a></h2>
 			<p>Continue or not continue? That is the question.</p>
 		</div>
+		{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+		{% endfor %}
 	</body>
 </html>
