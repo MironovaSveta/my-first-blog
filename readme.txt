@@ -258,3 +258,29 @@ Add page
 46) add template for Post Page
     Create file blog/templates/blog/post_delail.html
     
+######################################################################################
+Add form
+
+Because admin-panel is convenient, but its design is hard to change
+
+We can create own form or use ModelForm
+
+47) create form at blog/forms.py
+    * from django import forms
+      Import Django Forms
+    * class Meta -- defines what model is used for form creation
+    * title, text -- what fields of a model will be in form
+
+48) add link to the Form Page
+    blog/templates/blog/base.html
+    New view is named as post_new
+
+49) add URL to blog/urls.py
+
+50) add view post_new to blog/views.py
+
+51) create template for Form Page
+blog/templates/blog/post_edit.html
+   * {{ form.as_p }} -- show form
+   * <button type="submit" class="save btn btn-default">Save</button> -- button Save
+   * {% csrf_token %} -- due to safety
