@@ -284,3 +284,12 @@ blog/templates/blog/post_edit.html
    * {{ form.as_p }} -- show form
    * <button type="submit" class="save btn btn-default">Save</button> -- button Save
    * {% csrf_token %} -- due to safety
+
+52) add to blog/views.py two situations:
+   I empty form
+   II view with all inputed info
+      = if request.method = "POST"
+      * PostForm(request.POST)
+      * check if the form is valid
+        If all is correct -- save form without publishing, add author, add published date, publish 
+      * go to Post Detail page (recently created post)
