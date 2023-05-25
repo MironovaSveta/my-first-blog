@@ -293,3 +293,15 @@ blog/templates/blog/post_edit.html
       * check if the form is valid
         If all is correct -- save form without publishing, add author, add published date, publish 
       * go to Post Detail page (recently created post)
+
+#####################################################################################
+Edit post
+
+53) modify blog/templates/blog/post_detail.html
+    Add button "Edit"
+
+54) modify blog/urls.py
+    Add Edit page
+
+55) modify blog/views.py
+    Add post_edit view (line post_new view)
