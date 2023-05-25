@@ -305,3 +305,10 @@ Edit post
 
 55) modify blog/views.py
     Add post_edit view (line post_new view)
+
+#####################################################################################
+Only authenticated users can edit and add posts
+
+56) add {% if user.is_authenticated %} {% endif %} to buttons in:
+    Blog/templates/blog/base.html
+    Blog/templates/blog/post_detail.html
